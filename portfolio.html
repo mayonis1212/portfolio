@@ -6,46 +6,64 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* RESET & BASE */
-    * { margin:0; padding:0; box-sizing:border-box; }
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #FADCEB;
+      background: linear-gradient(135deg, #FADCEB 0%, #FDE2FF 100%);
       color: #333;
-      line-height:1.4;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    a { text-decoration:none; color: inherit; }
-
-    /* HEADER & NAV */
+    a {
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    /* Header */
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       padding: 1rem 2rem;
       background-color: #f8e4f0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     header h1 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       text-transform: uppercase;
       color: #9E58B3;
       letter-spacing: 2px;
     }
+    /* Navigation */
+    .nav-container {
+      display: flex;
+      align-items: center;
+    }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
     }
     nav a {
       font-weight: bold;
+      font-size: 1rem;
       text-transform: uppercase;
-      font-size: 0.95rem;
-      transition: color .3s ease;
+      color: #555;
     }
     nav a:hover {
       color: #9E58B3;
     }
-
-    /* PORTFOLIO GRID */
+    /* Main Content */
+    main {
+      flex: 1;
+    }
+    /* Portfolio Grid */
     .portfolio-grid {
       max-width: 1200px;
       margin: 3rem auto;
@@ -54,23 +72,21 @@
       gap: 2rem;
       padding: 0 1rem;
     }
-
-    /* ARCH LINK */
+    /* Arch Link */
     .arch-link {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      transition: transform .2s ease;
+      transition: transform 0.3s ease;
     }
     .arch-link:hover {
       transform: scale(1.05);
     }
-
-    /* ARCH SHAPE */
+    /* Arch Shape */
     .arch-shape {
       width: 100%;
-      padding-top: 130%;              /* keeps a consistent aspect ratio */
+      padding-top: 130%; /* maintains a consistent aspect ratio */
       position: relative;
       overflow: hidden;
       border-radius: 100px 100px 0 0;
@@ -78,51 +94,61 @@
     }
     .arch-shape img {
       position: absolute;
-      top:0; left:0;
-      width:100%; height:100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       border-radius: 100px 100px 0 0;
     }
-
-    /* LABEL UNDERNEATH */
+    /* Label Underneath */
     .arch-label {
-      margin-top: .75rem;
+      margin-top: 0.75rem;
       font-weight: bold;
       text-transform: uppercase;
       background: #C1A4F9;
       color: #fff;
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       border-radius: 4px;
     }
-
-    /* FOOTER */
+    /* Footer */
     footer {
       text-align: center;
       padding: 1rem;
       background-color: #f8e4f0;
-      margin-top: 2rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      margin-top: auto;
     }
-
-    /* MOBILE TWEAKS */
+    footer p {
+      font-size: 0.9rem;
+      color: #333;
+    }
+    /* Mobile Tweaks */
     @media (max-width: 600px) {
-      .arch-label { font-size: .9rem; padding:.4rem .8rem; }
+      nav ul {
+        gap: 1.5rem;
+      }
+      .arch-label {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Dylan Estrella</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.html">Contacts</a></li>
-      </ul>
-    </nav>
+    <div class="nav-container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-
   <main>
     <section class="portfolio-grid">
       <a href="experiences.html" class="arch-link">
@@ -131,21 +157,18 @@
         </div>
         <div class="arch-label">Experiences</div>
       </a>
-
       <a href="achievements.html" class="arch-link">
         <div class="arch-shape">
           <img src="https://i.pinimg.com/474x/0c/e2/0e/0ce20e76ad5b800b4ef14906bb046d5b.jpg" alt="Achievements">
         </div>
         <div class="arch-label">Achievements</div>
       </a>
-
       <a href="education.html" class="arch-link">
         <div class="arch-shape">
           <img src="https://i.pinimg.com/474x/24/30/f0/2430f0496b5753ce53e420bd9a3d0559.jpg" alt="Education">
         </div>
         <div class="arch-label">Education</div>
       </a>
-
       <a href="talents.html" class="arch-link">
         <div class="arch-shape">
           <img src="https://i.pinimg.com/474x/b5/46/58/b5465853f60185f0b94b058313a095e3.jpg" alt="Talents">
@@ -154,10 +177,8 @@
       </a>
     </section>
   </main>
-
   <footer>
     <p>&copy; 2025 All Rights Reserved</p>
   </footer>
-
 </body>
 </html>
